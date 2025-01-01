@@ -13,7 +13,7 @@ if (filter_var($url, FILTER_VALIDATE_URL) === false) {
 
 
 $return_var = null;
-exec("node " . escapeshellarg($scriptPath) . " " . escapeshellarg($url) . " 2>&1", $output, $return_var);
+exec("node -v" . " 2>&1", $output, $return_var);
 
 if ($return_var !== 0) {
     echo "Error executing command: " . implode("\n", $output);

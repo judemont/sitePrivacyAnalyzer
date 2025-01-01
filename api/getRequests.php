@@ -11,6 +11,10 @@ if (filter_var($url, FILTER_VALIDATE_URL) === false) {
     exit;
 }
 
+exec('export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" ');
+
 $output = shell_exec("node " . escapeshellarg($scriptPath) . " " . escapeshellarg($url) . " 2>&1");
 $return_var = null;
 exec("node " . escapeshellarg($scriptPath) . " " . escapeshellarg($url) . " 2>&1", $output, $return_var);

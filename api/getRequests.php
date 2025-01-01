@@ -12,6 +12,5 @@ if (filter_var($url, FILTER_VALIDATE_URL) === false) {
 }
 
 $output = shell_exec("node " . escapeshellarg($scriptPath) . " " . escapeshellarg($url));
-echo "aa";
 echo $output;
 ?>
